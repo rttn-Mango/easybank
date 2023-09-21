@@ -1,0 +1,10 @@
+@forward 'reset';
+@forward './components/custom-properties';
+
+body{
+
+}
+
+.footer{
+    background-color: var(--clr-primary-dark-blue);
+}
