@@ -3,9 +3,11 @@ import ServicesCard from "../components/ServicesCard"
 export default function Services(){
     return(
         <section className="services">
-            <h2>Why choose Easybank?</h2>
-            <p>We leverage Open Banking to turn your bank account into your financial hub. Control your finances like never before.</p>
-            <div className="services__group">
+            <div className="services__wrapper | container">
+                <div className="services__heading">
+                    <h2>Why choose Easybank?</h2>
+                    <p>We leverage Open Banking to turn your bank account into your financial hub. Control your finances like never before.</p>
+                </div>
                 <ServicesCard
                     path="src/assets/icon-online.svg"
                     subHeading="Online Banking"

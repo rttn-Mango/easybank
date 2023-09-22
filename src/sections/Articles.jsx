@@ -4,7 +4,7 @@ export default function Articles(){
     return(
         <section className="articles">
             <h2>Latest Articles</h2>
-            <div className="articles__group">
+            <div className="articles__group | container">
                 <ArticlesCard
                     path="src/assets/image-currency.jpg"
                     author="Claire Robinson"

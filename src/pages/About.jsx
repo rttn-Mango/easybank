@@ -9,7 +9,7 @@ export default function About(){
                 <img src="src/assets/about.webp" alt="banking" />
                 <p>At Easybank, we understand that your time is valuable. That's why we've designed our platform to be intuitive and efficient, ensuring you have more time to focus on what matters most to you. With a range of cutting-edge digital tools and features, managing your money has never been easier.</p>
             </div>
-            <div className="about__services">
+            <section className="about__services">
                 <ServicesCard
                     path="src/assets/icon-online.svg"
                     subHeading="Online Banking"
@@ -30,7 +30,7 @@ export default function About(){
                     subHeading="Open API"
                     paragraph="Manage your savings, investments, pensions, and much more from one account. Tracking your money has never been easier."
                 />
-            </div>
+            </section>
         </main>
     )
 }

@@ -1,10 +1,209 @@
 @forward 'reset';
 @forward './components/custom-properties';
 
-body{
+@mixin flexContainer($orientation, $gap){
+    display: flex;
+    flex-direction: $orientation;
+    gap: $gap;
+}
 
+body{
+    background-color: var(--clr-neutral-white);
+    font-family: var(--font-primary);
+    color: var(--clr-neutral-blue);
+}
+
+button[type="button"]{
+    padding: .65rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    background-image: linear-gradient(to right, var(--clr-primary-lime-green), var(--clr-primary-light-cyan));
+    color: var(--clr-neutral-white);
+    font-weight: var(--font-weight-700);
+}
+
+.container{
+    max-width: clamp(60%, 90%, 90rem);
+    margin-inline: auto
+}
+
+.header{
+    @include flexContainer(row, 2rem );
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 2rem;
+
+    &__hamburger{
+        display: block;
+        & button{
+            border: 0;
+            background-color: transparent;
+        }
+    }
+    & nav, button[type="button"]{
+        display: none;
+    }
+}
+
+.hero{
+    text-align: center;
+    padding-bottom: 5rem;
+    &__texts{
+        text-align: center;
+        max-width: 40ch;
+        & h1{
+            font-size: var(--font-size-900);
+            color: var(--clr-primary-dark-blue);
+            line-height: 1.2;
+        }
+        & p{
+            padding-block: 2rem;
+            color: var(--clr-neutral-blue);
+        }
+    }
+
+    &__bg-images{
+        position: relative;
+        overflow: hidden;
+
+        & img{
+            position: inherit;
+            top: -10rem;
+            float: right;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            background-image: url('../assets/bg-intro-mobile.svg');
+            background-repeat: no-repeat;
+            background-position:top;
+            background-size: contain;
+            inset: -3rem 0 0 0;
+            z-index: -1;
+        }
+    }
+}
+
+.services{
+    padding-block: 5rem;
+    background-color: var(--clr-neutral-light-blue);
+
+    &__wrapper{
+        @include flexContainer(column, 4rem);
+        text-align: center;
+        max-width: 40ch;
+
+        & article{
+            @include flexContainer(column, 2rem);
+            align-items: center;
+
+            & img{width: 6rem;}
+            & h3{
+                font-size: var(--font-size-700);
+                color: var(--clr-primary-dark-blue);
+            }
+
+        }
+    }
+
+    &__heading{
+        & h2{
+            font-size: var(--font-size-900);
+            padding-bottom: 2rem;
+            line-height: 1.2;
+            color: var(--clr-primary-dark-blue);
+        }
+    }
+}
+
+.articles{
+    padding-block: 5rem;
+    background-color: var(--clr-neutral-light-gray);
+
+    & h2{
+        font-size: var(--font-size-900);
+        color: var(--clr-primary-dark-blue);
+        text-align: center;
+        margin-block: 3rem;
+    }
+
+    &__group{
+        @include flexContainer(column, 3rem);
+        align-items: center;
+
+        & article{
+            background-color: var(--clr-neutral-white);
+            max-width: 53ch;
+
+            &:hover,&:focus{
+                box-shadow: 0 0 7px rgba(0 0 0 / .2);
+            }
+
+            & a{
+                text-decoration: none;
+
+                & .texts{
+                    padding: 3rem;
+                    & p {
+                        color: var(--clr-neutral-blue);
+                    }
+                    & h3{
+                        text-decoration: none;
+                        color: var(--clr-primary-dark-blue);
+                        font-size: var(--font-size-600);
+                        padding-block: 1rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .footer{
     background-color: var(--clr-primary-dark-blue);
+    padding-block: 3rem;
+
+    & .group{
+        @include flexContainer(column, 2rem);
+        align-items: center;
+        text-align: center;
+    }
+
+    object path{
+        fill: #fff !important;
+    }
+
+    &__socials--wrapper{
+        @include flexContainer(row, 1rem);
+        padding-top: 2rem;
+    }
+
+    &__links{
+        & li{
+            padding-bottom: 1rem;
+        }
+
+        & a{
+            text-decoration: none;
+            color: var(--clr-neutral-white);
+        }
+    }
+
+    &__credits{
+        & button{
+            margin-bottom: 2rem;
+        }
+    }
+
+}
+
+@media(min-width: 50em){
+    .header{
+        &__hamburger{display: none}
+        & nav, button[type="button"]{display: block; text-wrap:nowrap}
+        & nav ul{
+            @include flexContainer(row, 2rem);
+            & a{color: var(--clr-neutral-blue)}
+        }
+    }
 }
