@@ -3,12 +3,16 @@ import ServicesCard from "../components/ServicesCard"
 export default function About(){
     return(
         <main className="about">
-            <h1>Easybank, where banking is made simple</h1>
+            <h1>Easybank, where banking is made simple.</h1>
             {/*TODO: When styling, image should be in upper right and text in lower left */}
             <div className="about__intro">
-                <img src="src/assets/about.webp" alt="banking" />
-                <p>At Easybank, we understand that your time is valuable. That's why we've designed our platform to be intuitive and efficient, ensuring you have more time to focus on what matters most to you. With a range of cutting-edge digital tools and features, managing your money has never been easier.</p>
+                <div className="about__intro--wrapper | container">
+                    <img src="public/placeholder.jpg" alt="placeholder" />
+                    <h2>About <span>us</span></h2> 
+                </div>
+                <p className="container">At Easybank, we understand that your time is valuable. That's why we've designed our platform to be intuitive and efficient, ensuring you have more time to focus on what matters most to you. With a range of cutting-edge digital tools and features, managing your money has never been easier.</p>
             </div>
+
             <section className="about__services">
                 <ServicesCard
                     path="src/assets/icon-online.svg"
@@ -31,6 +35,7 @@ export default function About(){
                     paragraph="Manage your savings, investments, pensions, and much more from one account. Tracking your money has never been easier."
                 />
             </section>
+            
         </main>
     )
 }
