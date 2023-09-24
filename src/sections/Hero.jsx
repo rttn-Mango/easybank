@@ -1,6 +1,6 @@
 export default function Hero(){
     return(
-        <section className="hero">     
+        <section className="hero | container">     
             <div className="hero__bg-images" >
                 <img src="src/assets/image-mockups.png" alt="" />         
             </div>   

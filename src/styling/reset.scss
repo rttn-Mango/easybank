@@ -27,7 +27,7 @@ html:focus-within {
 }
 
 /* Set min height */
-html,body{min-height: 100vh;}
+html,body,#root{min-height: 100vh;}
 
 /* Set core body defaults */
 body {

@@ -4,19 +4,24 @@ import { MdEmail } from 'react-icons/md';
 
 export default function Contact(){
     return (
-        <main className="contact">
+        <main className="contact | container">
             <h1>Contact Us</h1>
-            <div className="contact__infos">
-                <BiSolidPhoneCall className='icon'/>
-                <p>contact Info</p>
-            </div>
-            <div className="contact__infos">
-                <FaLocationDot className='icon'/>
-                <p>Location Info</p>
-            </div>
-            <div className="contact__infos">
-                <MdEmail className='icon'/>
-                <p>Email Info</p>
+            <div className="contact__info">
+                <div className="contact__info--details">
+                    <BiSolidPhoneCall/>
+                    <p>Contact us</p>
+                    <p>+12 345-67-890</p>
+                </div>
+                <div className="contact__info--details">
+                    <FaLocationDot />
+                    <p>Location</p>
+                    <p>Somewhere Avenue, Lost City. </p>
+                </div>
+                <div className="contact__info--details">
+                    <MdEmail/>
+                    <p>Send us an Email</p>
+                    <p>easybank@email.com</p>
+                </div>
             </div>
             <div className="contact__message">
                 {/* TODO: Same styling with About */}
@@ -35,7 +40,7 @@ export default function Contact(){
                     </div>
                     <div className="form-group">
                         <label htmlFor="message"></label>
-                        <input type="text" name="message" id="message" placeholder="Message"/>
+                        <textarea type="text" name="message" id="message" placeholder="Message"/>
                     </div>
                     <button type="submit">Submit</button>
                 </form>

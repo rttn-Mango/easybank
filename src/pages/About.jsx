@@ -13,7 +13,7 @@ export default function About(){
                 <p className="container">At Easybank, we understand that your time is valuable. That's why we've designed our platform to be intuitive and efficient, ensuring you have more time to focus on what matters most to you. With a range of cutting-edge digital tools and features, managing your money has never been easier.</p>
             </div>
 
-            <section className="about__services">
+            <section className="about__services | container">
                 <ServicesCard
                     path="src/assets/icon-online.svg"
                     subHeading="Online Banking"
