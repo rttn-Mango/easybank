@@ -7,7 +7,7 @@ export default function Articles(){
                 <h2>Latest Articles</h2>
                 <div className="articles__group">
                     <ArticlesCard
-                        path="src/assets/image-currency.jpg"
+                        path="public/blog6.jpg"
                         author="Claire Robinson"
                         title="Receive money in any currency with no fees"
                         content="The world is getting smaller and we're becoming more mobile. So why should you be forced to only receive money in a single..."
