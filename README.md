@@ -12,9 +12,9 @@ This is a solution to the [Easybank landing page challenge on Frontend Mentor](h
 - [Author](#author)
 
 ## Overview
- - This project is a website for Fylo that offers digital-banking related services.
+ - This project is a website for Easybank that offers digital-banking related services.
  - Modifications were added to the project such as different hover and focus effects, layout, and such.
- - Contents for the four other pages were also added to the project.
+ - Contents and Routing for the four other pages were also added to the project.
 
 ### The challenge
 
@@ -60,7 +60,7 @@ Users should be able to:
 - [Unsplash](https://unsplash.com/) - Most images used in this project are taken from unsplash, credits goes to their actual owners.
 - [About page template](https://dribbble.com/shots/14338886-10-8-About-Us-Page) - Main layout inspiration for the About page
 - [Contact page template](https://www.elegantthemes.com/layouts/business/bank-contact-page/live-demo) - Main layout inspiration for the Contact page
-- [Contact page template 2]((https://dribbble.com/shots/14338906-10-8-Contact-Us-Page)) - Another inspiration for the Contact page
+- [Contact-page-template-two]((https://dribbble.com/shots/14338906-10-8-Contact-Us-Page)) - Another inspiration for the Contact page
 - [Blog page template](https://dribbble.com/shots/18954906-Credo-Medical-website-Blog-page) - Main inspiration for the Blog page
 - [Careers page template](https://dribbble.com/shots/22349737-Sarvadhi-Career-Page) - Main inspiration for the Careers page
 - [stackoverflow] - Used to get ideas.
