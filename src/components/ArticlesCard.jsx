@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function ArticlesCard({author, title, content, path}){
     return(
         <a href="">
@@ -11,4 +13,11 @@ export default function ArticlesCard({author, title, content, path}){
             </article>
         </a>
     )
+}
+
+ArticlesCard.propTypes = {
+    author: PropTypes.string,
+    title: PropTypes.string,
+    content: PropTypes.string,
+    path: PropTypes.string
 }

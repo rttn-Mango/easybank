@@ -79,7 +79,8 @@ button[type="button"]{
 
     &:hover, &:focus{
         cursor: pointer;
-        opacity: .6;
+        background-image: linear-gradient(to right, var(--clr-neutral-blue), var(--clr-primary-light-cyan));
+        box-shadow: 3px 5px 0 rgba(0 0 0 / .6);
     }
 }
 
@@ -230,12 +231,11 @@ button[type="button"]{
     }
 
     &__links{
-        & li{
-            padding-bottom: 1rem;
-        }
+        & li{padding-bottom: 1rem;}
 
         & a:hover, & a:focus{
-            color: var(--clr-primary-lime-green);
+            color: var(--clr-primary-light-cyan);
+            font-weight: 500;
         }
 
         & a{
@@ -245,9 +245,7 @@ button[type="button"]{
     }
 
     &__credits{
-        & button{
-            margin-bottom: 2rem;
-        }
+        & button{margin-bottom: 2rem;}
     }
 
 }
@@ -472,6 +470,109 @@ button[type="button"]{
     }
 }
 
+//Careers page
+.careers{
+    &__heading{
+        & h1{
+            @include pageHeaderStyling(--clr-primary-dark-blue, --clr-primary-light-cyan);
+            line-height: 1;
+        }
+
+        & button{
+            padding: .75rem 3rem;
+            border: 0;
+            background-color: #333;
+            color: var(--clr-neutral-white);
+            font-weight: var(--font-weight-700);
+            margin-block: 7rem 2rem;
+            &:hover, &:focus{
+                background-color: transparent;
+                border: 1px solid var(--clr-primary-dark-blue);
+                color: black;
+                box-shadow: 0 0 3px rgba(0 0 0 / .6);
+            }
+        }
+    }
+
+    &__values{
+        background-color: var(--clr-neutral-blue);
+        box-shadow: 0 0 3px rgba(0 0 0 / .9);
+        margin-block: 10rem;
+        color: var(--clr-primary-dark-blue);
+        padding: 10vw;
+        border-radius: 2em;
+
+        & h2{
+            padding-block: 3rem;
+            font-size: clamp(1.5rem, 4vw, var(--font-size-700));
+            color: var(--clr-primary-dark-blue);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        & img{
+            margin-bottom: 3rem;
+            border-radius: 1em;
+            box-shadow: 0 0 7px rgba(0 0 0 / .6);
+        }
+
+        & details{
+            margin-bottom: 2rem;
+            & summary{
+                display: inline-flex;
+                gap: .5rem;
+                width: 100%;
+                position: relative;
+                cursor: pointer;
+                border: 1px solid #333;
+                padding: 1rem 2rem;
+                box-shadow: 5px 7px 0 black;
+                font-size: clamp(.75rem, 2vw, 2rem);
+
+                &:hover, &:focus{
+                    background-color: rgba(0 0 0 / .6);
+                    border: 0;
+                    color: var(--clr-primary-light-cyan);
+                }
+
+                &::after{
+                    content: '+';
+                    position: absolute;
+                    right: 0;
+                    font-weight: var(--font-weight-900);
+                    font-size: var(--font-size-500);
+                    transition: .7s ease-in-out;
+                    margin-right: 2rem;
+                    align-self: center;
+                }
+            }
+
+            &[open]{
+                background-color: rgba(0 0 0 / .6);               
+                box-shadow: 0 0 5px rgba(0 0 0 / .6);
+
+                &:not(summary){animation: show-details .5s ease-in-out;}
+
+                & p{
+                    padding: .5rem 2rem 2rem;
+                    color: var(--clr-primary-dark-blue);
+                    color: var(--clr-neutral-white);
+                }
+
+                & summary{
+                    border: none;
+                    color: var(--clr-primary-light-cyan);
+                    box-shadow:none;
+                }
+            }
+
+            &[open] > summary::after{transform: rotate(45deg);}
+        }
+    }
+
+
+}
+
 @media(min-width: 55em){
     .header{
         &__hamburger{display: none}
@@ -481,19 +582,9 @@ button[type="button"]{
                 @include flexContainer(row, 2rem);
                 & a{
                     color: var(--clr-neutral-blue);
-                    position: relative;
-                    padding-bottom: 2.75rem;
                     &:hover, &:focus{
-                        color: var(--clr-primary-dark-blue);
-                        //This feels like a hack but it works quite well.
-                        &::before{
-                            content: '';
-                            position: absolute;
-                            bottom: 0;
-                            height: 5px;
-                            width: 100%;
-                            background-image: linear-gradient(to right, var(--clr-primary-lime-green), var(--clr-primary-light-cyan))
-                        }
+                        color: var(--clr-primary-light-cyan);
+                        font-weight: 500
                     }
                 }
             }
@@ -527,39 +618,6 @@ button[type="button"]{
                 background-size: auto;
                 inset: -30rem -13rem 0 0;
             }
-        }
-    }
-
-    //About page
-    .about{
-        &__intro{
-            &--wrapper{
-                $font-size: clamp(1.5rem, 8vw, 5rem);
-
-                @include gridContainer(2rem, 100px, 1fr);
-                grid-template-rows: repeat(3, 300px);
-                padding-bottom: 5rem;
-                & h2{
-                    writing-mode: vertical-lr;
-                    text-orientation:upright ;
-                    grid-row: 1 / 3;
-                    padding-block: 0;
-
-                    & span{
-                        padding-inline: 9rem;
-                    }
-                }
-    
-                & img{
-                    grid-column: 2;
-                    grid-row: 2 / -1;
-                }   
-            }
-        }
-    
-        &__services{
-            padding-block: 7rem;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 330px));
         }
     }
 
@@ -601,6 +659,39 @@ button[type="button"]{
         &__credits{margin-left: auto;}
 
         &__socials--wrapper{padding-top: 4rem;}
+    }
+
+    //About page
+    .about{
+        &__intro{
+            &--wrapper{
+                $font-size: clamp(1.5rem, 8vw, 5rem);
+
+                @include gridContainer(2rem, 100px, 1fr);
+                grid-template-rows: repeat(3, 300px);
+                padding-bottom: 5rem;
+                & h2{
+                    writing-mode: vertical-lr;
+                    text-orientation:upright ;
+                    grid-row: 1 / 3;
+                    padding-block: 0;
+
+                    & span{
+                        padding-inline: 9rem;
+                    }
+                }
+    
+                & img{
+                    grid-column: 2;
+                    grid-row: 2 / -1;
+                }   
+            }
+        }
+    
+        &__services{
+            padding-block: 7rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 330px));
+        }
     }
 
     //Contact page
@@ -659,5 +750,49 @@ button[type="button"]{
                 grid-template-columns: repeat(auto-fit, minmax(330px, 450px));
             }
         }
+    }
+
+    //Careers page
+    .careers{
+        &__heading{
+            text-align: center;
+        }
+
+        &__values{
+            padding: 2rem 7vw 7rem;
+            &--group{
+                @include flexContainer(row, 2rem);
+                align-items: center;
+                & img{
+                    width: 40%;
+                    margin-bottom: 0;
+                    align-self: start;
+                }
+
+                & details{
+                    margin-bottom: 2vw;
+                    & summary{
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+
+            &--cards{
+                flex: 1;
+            }
+        }
+    }
+}
+
+@keyframes show-details{
+    from{
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+
     }
 }

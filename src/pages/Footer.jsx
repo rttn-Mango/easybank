@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Footer(){
     return(
         <footer className="footer">
@@ -14,12 +16,12 @@ export default function Footer(){
                 </div>
                 <nav className="footer__links">
                     <ul role="list">
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">Blog</a></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/blog">Blog</Link></li>
                     </ul>
                     <ul role="list">
-                        <li><a href="">Careers</a></li>
+                        <li><Link to="/careers">Careers</Link></li>
                         <li><a href="">Support</a></li>
                         <li><a href="">Privacy Policy</a></li>
                     </ul>

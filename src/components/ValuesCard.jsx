@@ -1,8 +1,15 @@
+import PropTypes from "prop-types";
+
 export default function ValuesCard({subHeading, content}){
     return(
-        <div>
-            <h3>{subHeading}</h3>
+        <details>
+            <summary>{subHeading}</summary>
             <p>{content}</p>
-        </div>
+        </details>
     )
+}
+
+ValuesCard.propTypes = {
+    subHeading: PropTypes.string,
+    content: PropTypes.string
 }

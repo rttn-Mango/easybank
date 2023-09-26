@@ -105,7 +105,8 @@ button[type=button] {
 }
 button[type=button]:hover, button[type=button]:focus {
   cursor: pointer;
-  opacity: 0.6;
+  background-image: linear-gradient(to right, var(--clr-neutral-blue), var(--clr-primary-light-cyan));
+  box-shadow: 3px 5px 0 rgba(0, 0, 0, 0.6);
 }
 
 .container {
@@ -286,7 +287,8 @@ button[type=button]:hover, button[type=button]:focus {
   padding-bottom: 1rem;
 }
 .footer__links a:hover, .footer__links a:focus {
-  color: var(--clr-primary-lime-green);
+  color: var(--clr-primary-light-cyan);
+  font-weight: 500;
 }
 .footer__links a {
   text-decoration: none;
@@ -538,6 +540,100 @@ button[type=button]:hover, button[type=button]:focus {
   color: var(--clr-primary-lime-green);
 }
 
+.careers__heading h1 {
+  font-size: clamp(2rem, 5vw, 6rem);
+  background-image: linear-gradient(to right, var(--clr-primary-dark-blue), var(--clr-primary-light-cyan));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: var(--font-secondary);
+  padding-block: 2vw;
+  line-height: 1;
+}
+.careers__heading button {
+  padding: 0.75rem 3rem;
+  border: 0;
+  background-color: #333;
+  color: var(--clr-neutral-white);
+  font-weight: var(--font-weight-700);
+  margin-block: 7rem 2rem;
+}
+.careers__heading button:hover, .careers__heading button:focus {
+  background-color: transparent;
+  border: 1px solid var(--clr-primary-dark-blue);
+  color: black;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+.careers__values {
+  background-color: var(--clr-neutral-blue);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+  margin-block: 10rem;
+  color: var(--clr-primary-dark-blue);
+  padding: 10vw;
+  border-radius: 2em;
+}
+.careers__values h2 {
+  padding-block: 3rem;
+  font-size: clamp(1.5rem, 4vw, var(--font-size-700));
+  color: var(--clr-primary-dark-blue);
+  font-weight: 500;
+  text-align: center;
+}
+.careers__values img {
+  margin-bottom: 3rem;
+  border-radius: 1em;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+}
+.careers__values details {
+  margin-bottom: 2rem;
+}
+.careers__values details summary {
+  display: inline-flex;
+  gap: 0.5rem;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #333;
+  padding: 1rem 2rem;
+  box-shadow: 5px 7px 0 black;
+  font-size: clamp(0.75rem, 2vw, 2rem);
+}
+.careers__values details summary:hover, .careers__values details summary:focus {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0;
+  color: var(--clr-primary-light-cyan);
+}
+.careers__values details summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-weight: var(--font-weight-900);
+  font-size: var(--font-size-500);
+  transition: 0.7s ease-in-out;
+  margin-right: 2rem;
+  align-self: center;
+}
+.careers__values details[open] {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+.careers__values details[open]:not(summary) {
+  animation: show-details 0.5s ease-in-out;
+}
+.careers__values details[open] p {
+  padding: 0.5rem 2rem 2rem;
+  color: var(--clr-primary-dark-blue);
+  color: var(--clr-neutral-white);
+}
+.careers__values details[open] summary {
+  border: none;
+  color: var(--clr-primary-light-cyan);
+  box-shadow: none;
+}
+.careers__values details[open] > summary::after {
+  transform: rotate(45deg);
+}
+
 @media (min-width: 55em) {
   .header__hamburger {
     display: none;
@@ -553,19 +649,10 @@ button[type=button]:hover, button[type=button]:focus {
   }
   .header nav ul a {
     color: var(--clr-neutral-blue);
-    position: relative;
-    padding-bottom: 2.75rem;
   }
   .header nav ul a:hover, .header nav ul a:focus {
-    color: var(--clr-primary-dark-blue);
-  }
-  .header nav ul a:hover::before, .header nav ul a:focus::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: 5px;
-    width: 100%;
-    background-image: linear-gradient(to right, var(--clr-primary-lime-green), var(--clr-primary-light-cyan));
+    color: var(--clr-primary-light-cyan);
+    font-weight: 500;
   }
   .hero {
     display: flex;
@@ -595,30 +682,6 @@ button[type=button]:hover, button[type=button]:focus {
     background-position: right;
     background-size: auto;
     inset: -30rem -13rem 0 0;
-  }
-  .about__intro--wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 2rem;
-    grid-template-rows: repeat(3, 300px);
-    padding-bottom: 5rem;
-  }
-  .about__intro--wrapper h2 {
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    grid-row: 1/3;
-    padding-block: 0;
-  }
-  .about__intro--wrapper h2 span {
-    padding-inline: 9rem;
-  }
-  .about__intro--wrapper img {
-    grid-column: 2;
-    grid-row: 2/-1;
-  }
-  .about__services {
-    padding-block: 7rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 330px));
   }
   .services__wrapper {
     align-items: center;
@@ -654,6 +717,30 @@ button[type=button]:hover, button[type=button]:focus {
   }
   .footer__socials--wrapper {
     padding-top: 4rem;
+  }
+  .about__intro--wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    grid-template-rows: repeat(3, 300px);
+    padding-bottom: 5rem;
+  }
+  .about__intro--wrapper h2 {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    grid-row: 1/3;
+    padding-block: 0;
+  }
+  .about__intro--wrapper h2 span {
+    padding-inline: 9rem;
+  }
+  .about__intro--wrapper img {
+    grid-column: 2;
+    grid-row: 2/-1;
+  }
+  .about__services {
+    padding-block: 7rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 330px));
   }
   .contact__info {
     display: flex;
@@ -693,6 +780,42 @@ button[type=button]:hover, button[type=button]:focus {
   }
   .blog__articles--group {
     grid-template-columns: repeat(auto-fit, minmax(330px, 450px));
+  }
+  .careers__heading {
+    text-align: center;
+  }
+  .careers__values {
+    padding: 2rem 7vw 7rem;
+  }
+  .careers__values--group {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+  }
+  .careers__values--group img {
+    width: 40%;
+    margin-bottom: 0;
+    align-self: start;
+  }
+  .careers__values--group details {
+    margin-bottom: 2vw;
+  }
+  .careers__values--group details summary {
+    font-size: 1.25rem;
+  }
+  .careers__values--cards {
+    flex: 1;
+  }
+}
+@keyframes show-details {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

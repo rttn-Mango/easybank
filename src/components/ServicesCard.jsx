@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function ServicesCard({path, subHeading, paragraph}){
     return(
         <article>
@@ -6,4 +8,10 @@ export default function ServicesCard({path, subHeading, paragraph}){
             <p>{paragraph}</p>
         </article>
     )
+}
+
+ServicesCard.propTypes = {
+    path: PropTypes.string,
+    subHeading: PropTypes.string,
+    paragraph: PropTypes.string
 }
