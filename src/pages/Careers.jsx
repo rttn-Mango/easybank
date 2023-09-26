@@ -1,6 +1,29 @@
 import ValuesCard from "../components/ValuesCard"
 
 export default function Careers(){
+    const CAREERS_DATA = [
+        {
+            subHeading: "Simplicity",
+            content: "We believe in keeping things straightforward. Our user-friendly interface and clear, jargon-free language make banking a breeze, even for those new to the world of online finance."
+        },
+        {
+            subHeading: "Security",
+            content: "Your trust is paramount. We employ state-of-the-art security measures to safeguard your financial information and transactions, ensuring a safe and secure banking experience."
+        },
+        {
+            subHeading: "Innovation",
+            content: "We're always at the forefront of technological advancements in the banking industry. This enables us to offer you the latest features and services, providing a modern banking experience that adapts to your needs."                       
+        },
+        {
+            subHeading: "Accessibility",
+            content: "Easybank is accessible anytime, anywhere. Whether you're at home, in the office, or on the go, you can manage your finances with ease through our web platform or mobile app."
+        },
+        {
+            subHeading: "Customer Friendly",
+            content: "Your satisfaction is our priority. Our dedicated customer support team is available to assist you with any questions or concerns you may have, ensuring you have a seamless experience with Easybank."
+        }
+    ];
+
     return(
         <main className="careers">
             <div className="careers__heading | container">
@@ -11,28 +34,19 @@ export default function Careers(){
             <section className="careers__values | container">
                 <h2>Our Values</h2>
                 <div className="careers__values--group">
-                    <img src="public/team.jpg" alt="Easybank Team" />
+                    <img src="public/team.jpg" alt="Easybank Team" draggable="false" loading="lazy"/>
                     <div className="careers__values--cards">
-                        <ValuesCard
-                            subHeading="Simplicity"
-                            content="We believe in keeping things straightforward. Our user-friendly interface and clear, jargon-free language make banking a breeze, even for those new to the world of online finance."
-                        />
-                        <ValuesCard
-                            subHeading="Security"
-                            content="Your trust is paramount. We employ state-of-the-art security measures to safeguard your financial information and transactions, ensuring a safe and secure banking experience."
-                        />
-                        <ValuesCard
-                            subHeading="Innovation"
-                            content="We're always at the forefront of technological advancements in the banking industry. This enables us to offer you the latest features and services, providing a modern banking experience that adapts to your needs."
-                        />
-                        <ValuesCard
-                            subHeading="Accessibility"
-                            content="Easybank is accessible anytime, anywhere. Whether you're at home, in the office, or on the go, you can manage your finances with ease through our web platform or mobile app."
-                        />
-                        <ValuesCard
-                            subHeading="Customer Friendly"
-                            content="Your satisfaction is our priority. Our dedicated customer support team is available to assist you with any questions or concerns you may have, ensuring you have a seamless experience with Easybank."
-                        />
+                        {
+                            CAREERS_DATA.map(career => {
+                                return(
+                                    <ValuesCard
+                                        key={career.subHeading}
+                                        subHeading={career.subHeading}
+                                        content={career.content}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </section>

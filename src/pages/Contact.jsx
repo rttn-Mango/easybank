@@ -24,7 +24,6 @@ export default function Contact(){
                 </div>
             </div>
             <div className="contact__message">
-                {/* TODO: Same styling with About */}
                 <div className="contact__message--group">
                     <p>Get In Touch</p>
                     <h2>Have a question? Message us below</h2>

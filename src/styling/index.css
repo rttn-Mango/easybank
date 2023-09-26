@@ -88,6 +88,12 @@ picture {
   --font-weight-900: 900;
 }
 
+.disabled {
+  pointer-events: none;
+  touch-action: none;
+  overflow: hidden;
+}
+
 body {
   background-color: var(--clr-neutral-white);
   font-family: var(--font-primary);
@@ -121,15 +127,53 @@ button[type=button]:hover, button[type=button]:focus {
   justify-content: space-between;
   align-items: center;
   padding-block: 2rem;
+  position: relative;
+}
+.header button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  pointer-events: all;
 }
 .header__hamburger {
   display: block;
+  pointer-events: all;
+  position: absolute;
+  inset: 7rem -100px auto calc(31% - 50px);
+  margin: auto;
+  z-index: 9999;
+  transform: translateY(-50rem);
+  transition: transform 500ms ease;
 }
-.header__hamburger button {
-  border: 0;
-  background-color: transparent;
+.header__hamburger.active {
+  transform: translateY(0);
 }
-.header nav, .header button[type=button] {
+.header__hamburger nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-block: 2rem 1rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-neutral-white);
+  width: 60%;
+  z-index: 1;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 100vw rgba(0, 0, 0, 0.8);
+  display: block;
+}
+.header__hamburger nav li {
+  padding-bottom: 1.5rem;
+}
+.header__hamburger nav a {
+  color: var(--clr-primary-dark-blue);
+}
+.header__hamburger nav a:hover, .header__hamburger nav a:focus {
+  color: var(--clr-primary-light-cyan);
+  font-weight: var(--font-weight-700);
+}
+.header__wide, .header button[type=button] {
   display: none;
 }
 
@@ -344,7 +388,7 @@ button[type=button]:hover, button[type=button]:focus {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
-  place-content: center;
+  place-items: center;
 }
 .about__services article {
   display: flex;
@@ -411,6 +455,7 @@ button[type=button]:hover, button[type=button]:focus {
   padding: 1rem;
   width: 100%;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6);
+  border: 1px solid #333;
 }
 .contact__message form .form-group label {
   position: absolute;
@@ -467,6 +512,7 @@ button[type=button]:hover, button[type=button]:focus {
   width: 100%;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6);
   padding: 0.5rem;
+  border: 1px solid #333;
 }
 .blog__heading form button {
   padding: 0.5rem 1.5rem;
@@ -635,7 +681,7 @@ button[type=button]:hover, button[type=button]:focus {
 }
 
 @media (min-width: 55em) {
-  .header__hamburger {
+  .header__hamburger, .header button {
     display: none;
   }
   .header nav, .header button[type=button] {
@@ -650,7 +696,7 @@ button[type=button]:hover, button[type=button]:focus {
   .header nav ul a {
     color: var(--clr-neutral-blue);
   }
-  .header nav ul a:hover, .header nav ul a:focus {
+  .header nav ul a:hover, .header nav ul a:focus, .header nav ul a:active {
     color: var(--clr-primary-light-cyan);
     font-weight: 500;
   }
@@ -739,6 +785,7 @@ button[type=button]:hover, button[type=button]:focus {
     grid-row: 2/-1;
   }
   .about__services {
+    place-content: center;
     padding-block: 7rem;
     grid-template-columns: repeat(auto-fit, minmax(280px, 330px));
   }

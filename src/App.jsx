@@ -8,17 +8,40 @@ import Careers from "./pages/Careers"
 import {Routes, Route } from "react-router-dom"
 
 function App() {
-  
+  const ROUTES = [
+    {
+      path: '',
+      element: <Homepage/>
+    },
+    {
+      path: '/about',
+      element: <About/>
+    },
+    {
+      path: '/contact',
+      element: <Contact/>
+    },
+    {
+      path: '/blog',
+      element: <Blog/>
+    },
+    {
+      path: '/careers',
+      element: <Careers/>
+    },
+  ];
 
   return (
     <>
       <Header />
       <Routes>
-          <Route exact path="" element={<Homepage/>}></Route>
-          <Route exact path="/about" element={<About/>}></Route>
-          <Route exact path="/contact" element={<Contact/>}></Route>
-          <Route exact path="/blog" element={<Blog/>}></Route>
-          <Route exact path="/careers" element={<Careers/>}></Route>
+        {
+          ROUTES.map(route => {
+            return(
+              <Route exact key={route.path} path={route.path} element={route.element}/>
+            )
+          })
+        }
       </Routes>
       <Footer />
     </>

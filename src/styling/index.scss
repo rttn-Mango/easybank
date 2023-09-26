@@ -62,6 +62,13 @@
     padding-block: 2vw;
 }
 
+//Class for disabling background actions when mobile nav is active
+.disabled{
+    pointer-events: none;
+    touch-action: none;
+    overflow: hidden;
+}
+
 body{
     background-color: var(--clr-neutral-white);
     font-family: var(--font-primary);
@@ -84,6 +91,7 @@ button[type="button"]{
     }
 }
 
+//Left and right side spacer
 .container{
     max-width: clamp(60%, 80%, 1440px);
     margin-inline: auto
@@ -94,18 +102,55 @@ button[type="button"]{
     justify-content: space-between;
     align-items: center;
     padding-block: 2rem;
+    position: relative;
+    
+
+    & button{
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        pointer-events: all;
+    }
 
     &__hamburger{
         display: block;
-        & button{
-            border: 0;
-            background-color: transparent;
+        pointer-events: all;
+        position: absolute;
+        inset: 7rem -100px auto calc(31% - 50px);
+        margin: auto;
+        z-index: 9999;
+        transform: translateY(-50rem);
+        transition: transform 500ms ease;
+
+        &.active{transform:translateY(0);}
+
+        & nav{
+            @include flexContainer(column, 0);
+            padding-block: 2rem 1rem;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--clr-neutral-white);
+            width: 60%;
+            z-index: 1;
+            border-radius: .5rem;
+            box-shadow: 0 0 100vw rgba(0 0 0 / .8);
+            display: block;
+
+
+            & li{padding-bottom: 1.5rem;}
+
+            & a{
+                color: var(--clr-primary-dark-blue);
+                &:hover, &:focus{
+                    color: var(--clr-primary-light-cyan);
+                    font-weight: var(--font-weight-700);
+                }
+            }
         }
     }
 
-    & nav, button[type="button"]{
-        display: none;
-    }
+    &__wide, button[type="button"]{display: none;}
 }
 
 .hero{
@@ -300,7 +345,7 @@ button[type="button"]{
     &__services{
         padding-block: 7rem;
         @include gridContainer(2rem, 240px, 1fr);
-        place-content: center;
+        place-items: center;
         
         & article{@include servicesCard();}
     }
@@ -355,6 +400,7 @@ button[type="button"]{
                     padding: 1rem;
                     width: 100%;
                     box-shadow: 2px 2px 0 rgba(0 0 0 / .6);
+                    border: 1px solid #333;
                 }
 
                 //For accessibility purposes
@@ -409,6 +455,7 @@ button[type="button"]{
                 width: 100%;
                 box-shadow: 2px 2px 0 rgba(0 0 0 / .6);
                 padding: .5rem;
+                border: 1px solid #333;
             }
 
             & button{
@@ -426,7 +473,7 @@ button[type="button"]{
                 }
             }
 
-            //For Accessibility purposes
+            //Hides label from screen but not from screen reader
             & label{
                 position: absolute;
                 left:-10000px;
@@ -575,14 +622,16 @@ button[type="button"]{
 
 @media(min-width: 55em){
     .header{
-        &__hamburger{display: none}
+        &__hamburger, button{display: none;}
+
         & nav, button[type="button"]{display: block; text-wrap:nowrap}
+
         & nav{
             & ul{
                 @include flexContainer(row, 2rem);
                 & a{
                     color: var(--clr-neutral-blue);
-                    &:hover, &:focus{
+                    &:hover, &:focus, &:active{
                         color: var(--clr-primary-light-cyan);
                         font-weight: 500
                     }
@@ -689,6 +738,7 @@ button[type="button"]{
         }
     
         &__services{
+            place-content: center;
             padding-block: 7rem;
             grid-template-columns: repeat(auto-fit, minmax(280px, 330px));
         }
@@ -754,9 +804,7 @@ button[type="button"]{
 
     //Careers page
     .careers{
-        &__heading{
-            text-align: center;
-        }
+        &__heading{text-align: center;}
 
         &__values{
             padding: 2rem 7vw 7rem;
@@ -777,13 +825,12 @@ button[type="button"]{
                 }
             }
 
-            &--cards{
-                flex: 1;
-            }
+            &--cards{flex: 1;}
         }
     }
 }
 
+//Careers page details tag animation
 @keyframes show-details{
     from{
         opacity: 0;
