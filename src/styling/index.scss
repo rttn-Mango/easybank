@@ -124,9 +124,9 @@ button[type="button"]{
 
         &.active{transform:translateY(0);}
 
-        & nav{
+        &--nav{
             @include flexContainer(column, 0);
-            padding-block: 2rem 1rem;
+            padding-block: 4rem 1rem;
             text-align: center;
             align-items: center;
             justify-content: center;
@@ -136,7 +136,7 @@ button[type="button"]{
             border-radius: .5rem;
             box-shadow: 0 0 100vw rgba(0 0 0 / .8);
             display: block;
-
+            position: relative;
 
             & li{padding-bottom: 1.5rem;}
 
@@ -146,6 +146,12 @@ button[type="button"]{
                     color: var(--clr-primary-light-cyan);
                     font-weight: var(--font-weight-700);
                 }
+            }
+
+            & button{
+                position: absolute;
+                top: 1rem;
+                right: 1.25rem;
             }
         }
     }
@@ -186,7 +192,7 @@ button[type="button"]{
         &::after{
             content: '';
             position: absolute;
-            background-image: url('../assets/bg-intro-mobile.svg');
+            background-image: url('public/bg-intro-mobile.svg');
             background-repeat: no-repeat;
             background-position:top;
             background-size: contain;
@@ -319,6 +325,9 @@ button[type="button"]{
         &--wrapper{
             @include gridContainer(3rem, 50%, 1fr);
             grid-template-rows: repeat(3, 40%);
+            
+            
+
             & h2{
                 text-align: center;
                 align-self: center;
@@ -662,7 +671,7 @@ button[type="button"]{
             }
 
             &::after{
-                background-image: url('../assets/bg-intro-desktop.svg');
+                background-image: url('public/bg-intro-desktop.svg');
                 background-position:right;
                 background-size: auto;
                 inset: -30rem -13rem 0 0;
@@ -842,4 +851,9 @@ button[type="button"]{
         transform: translateY(0);
 
     }
+}
+
+@keyframes img-placeholder{
+    from{background-color: hsl(200 20% 70%)}
+    to{background-color: hsl(200, 20%, 95%);}
 }

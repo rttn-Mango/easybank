@@ -2,7 +2,7 @@ export default function Hero(){
     return(
         <section className="hero | container">     
             <div className="hero__bg-images" >
-                <img src="src/assets/image-mockups.png" alt="bg image" draggable="false" loading="lazy"/>         
+                <img src="/image-mockups.png" alt="bg image" draggable="false" loading="eager"/>         
             </div>   
             <div className="hero__texts">
                 <h1>Next generation digital banking</h1>

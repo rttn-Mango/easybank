@@ -1,24 +1,24 @@
-import ServicesCard from "../components/ServicesCard"
+import ServicesCard from "../components/ServicesCard";
 
 export default function Services(){
     const SERVICES_DATA = [
         {
-            path: "src/assets/icon-online.svg",
+            path: "/icon-online.svg",
             subHeading: "Online Banking",
             paragraph: "Our modern web and mobile applications allow you to keep track of your finances wherever you are in the world."
         },
         {
-            path: "src/assets/icon-budgeting.svg",
+            path: "/icon-budgeting.svg",
             subHeading: "Simple Budgeting",
             paragraph: "See exactly where your money goes each month. Receive notifications when you're close to hitting your limits."
         },
         {
-            path: "src/assets/icon-onboarding.svg",
+            path: "/icon-onboarding.svg",
             subHeading: "Fast Onboarding",
             paragraph: "We don't do branches. Open your account in minutes online and start taking control of your finances right away."
         },
         {
-            path: "src/assets/icon-api.svg",
+            path: "/icon-api.svg",
             subHeading: "Open API",
             paragraph: "Manage your savings, investments, pensions, and much more from one account. Tracking your money has never been easier."
         }

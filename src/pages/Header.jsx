@@ -21,7 +21,7 @@ export default function Header(){
 
     return(
         <header className="header | container">
-            <Link className="logo" to=""><img src="src/assets/logo.svg" alt="Easybank logo" draggable="false"/></Link>
+            <Link className="logo" to=""><img src="/logo.svg" alt="Easybank logo" draggable="false"/></Link>
             <>
                 <nav className="header__wide">
                     <ul role="list">
@@ -43,11 +43,12 @@ export default function Header(){
                     </ul>
                 </nav>
                 <button type="button">Request Invite</button>
-                {mobile ? <button onClick={triggerMobileNav}><img src="src/assets/icon-close.svg" alt="nav icon"/></button> : <button onClick={triggerMobileNav}><img src="src/assets/icon-hamburger.svg" alt="nav icon"/></button>}
+                {mobile ? null : <button onClick={triggerMobileNav}><img src="/icon-hamburger.svg" alt="nav icon"/></button>}
             </>
 
-            <div className={mobile ? "header__hamburger active" : "header__hamburger"}>
-                <nav>
+            <div className={mobile ? "header__hamburger active" : "header__hamburger"}>               
+                <div className="header__hamburger--nav">
+                    <button onClick={triggerMobileNav}><img src="/icon-close.svg" alt="nav icon"/></button>
                     <ul role="list">
                         <li >
                             <Link onClick={triggerMobileNav} to="">Home</Link>
@@ -65,7 +66,7 @@ export default function Header(){
                             <Link onClick={triggerMobileNav} to="/careers">Careers</Link>
                         </li>
                     </ul>
-                </nav>                        
+                </div>                        
             </div>
         </header>
     )

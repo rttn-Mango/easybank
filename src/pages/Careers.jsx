@@ -28,13 +28,13 @@ export default function Careers(){
         <main className="careers">
             <div className="careers__heading | container">
                 <h1>Be part of <strong>something great</strong>. Join our <strong>fast growing team</strong></h1>
-                <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, aliquid voluptatem tempora nisi, magni quam consectetur praesentium ipsa laudantium voluptatibus inventore optio ducimus ea beatae esse eaque? Odit, et perspiciatis!</span><span>Ipsum ex libero ad sunt in nisi sequi architecto quasi necessitatibus quis suscipit doloribus distinctio illo, accusantium quia eos animi, doloremque expedita optio. Consequatur in dicta officia molestias, doloremque consectetur.</span></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, aliquid voluptatem tempora nisi, magni quam consectetur praesentium ipsa laudantium voluptatibus inventore optio ducimus ea beatae esse eaque? Odit, et perspiciatis! Ipsum ex libero ad sunt in nisi sequi architecto quasi necessitatibus quis suscipit doloribus distinctio illo, accusantium quia eos animi, doloremque expedita optio. Consequatur in dicta officia molestias, doloremque consectetur</p>
                 <button>See open positions</button>
             </div>
             <section className="careers__values | container">
                 <h2>Our Values</h2>
                 <div className="careers__values--group">
-                    <img src="public/team.jpg" alt="Easybank Team" draggable="false" loading="lazy"/>
+                    <img src="/team.jpg" alt="Easybank Team" draggable="false" loading="lazy"/>
                     <div className="careers__values--cards">
                         {
                             CAREERS_DATA.map(career => {

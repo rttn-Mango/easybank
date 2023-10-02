@@ -148,11 +148,11 @@ button[type=button]:hover, button[type=button]:focus {
 .header__hamburger.active {
   transform: translateY(0);
 }
-.header__hamburger nav {
+.header__hamburger--nav {
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding-block: 2rem 1rem;
+  padding-block: 4rem 1rem;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -162,16 +162,22 @@ button[type=button]:hover, button[type=button]:focus {
   border-radius: 0.5rem;
   box-shadow: 0 0 100vw rgba(0, 0, 0, 0.8);
   display: block;
+  position: relative;
 }
-.header__hamburger nav li {
+.header__hamburger--nav li {
   padding-bottom: 1.5rem;
 }
-.header__hamburger nav a {
+.header__hamburger--nav a {
   color: var(--clr-primary-dark-blue);
 }
-.header__hamburger nav a:hover, .header__hamburger nav a:focus {
+.header__hamburger--nav a:hover, .header__hamburger--nav a:focus {
   color: var(--clr-primary-light-cyan);
   font-weight: var(--font-weight-700);
+}
+.header__hamburger--nav button {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
 }
 .header__wide, .header button[type=button] {
   display: none;
@@ -210,7 +216,7 @@ button[type=button]:hover, button[type=button]:focus {
 .hero__bg-images::after {
   content: "";
   position: absolute;
-  background-image: url("../assets/bg-intro-mobile.svg");
+  background-image: url("public/bg-intro-mobile.svg");
   background-repeat: no-repeat;
   background-position: top;
   background-size: contain;
@@ -724,7 +730,7 @@ button[type=button]:hover, button[type=button]:focus {
     float: right;
   }
   .hero__bg-images::after {
-    background-image: url("../assets/bg-intro-desktop.svg");
+    background-image: url("public/bg-intro-desktop.svg");
     background-position: right;
     background-size: auto;
     inset: -30rem -13rem 0 0;
@@ -863,6 +869,14 @@ button[type=button]:hover, button[type=button]:focus {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes img-placeholder {
+  from {
+    background-color: hsl(200, 20%, 70%);
+  }
+  to {
+    background-color: hsl(200, 20%, 95%);
   }
 }
 
