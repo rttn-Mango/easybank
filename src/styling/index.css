@@ -477,6 +477,7 @@ button[type=button]:hover, button[type=button]:focus {
   background-color: #333;
   color: var(--clr-neutral-white);
   font-weight: var(--font-weight-700);
+  cursor: pointer;
 }
 .contact__message form button:hover, .contact__message form button:focus {
   background-color: transparent;
@@ -526,6 +527,7 @@ button[type=button]:hover, button[type=button]:focus {
   border: 0;
   color: var(--clr-neutral-white);
   font-weight: var(--font-weight-700);
+  cursor: pointer;
 }
 .blog__heading form button:hover, .blog__heading form button:focus {
   background-color: transparent;
@@ -609,6 +611,7 @@ button[type=button]:hover, button[type=button]:focus {
   color: var(--clr-neutral-white);
   font-weight: var(--font-weight-700);
   margin-block: 7rem 2rem;
+  cursor: pointer;
 }
 .careers__heading button:hover, .careers__heading button:focus {
   background-color: transparent;

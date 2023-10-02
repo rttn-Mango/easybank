@@ -429,6 +429,7 @@ button[type="button"]{
                 background-color: #333;
                 color: var(--clr-neutral-white);
                 font-weight: var(--font-weight-700);
+                cursor: pointer;
                 &:hover, &:focus{
                     background-color: transparent;
                     border: 2px solid var(--clr-primary-dark-blue);
@@ -473,6 +474,7 @@ button[type="button"]{
                 border: 0;
                 color: var(--clr-neutral-white);
                 font-weight: var(--font-weight-700);
+                cursor: pointer;
 
                 &:hover, &:focus{
                     background-color: transparent;
@@ -541,6 +543,8 @@ button[type="button"]{
             color: var(--clr-neutral-white);
             font-weight: var(--font-weight-700);
             margin-block: 7rem 2rem;
+            cursor: pointer;
+
             &:hover, &:focus{
                 background-color: transparent;
                 border: 1px solid var(--clr-primary-dark-blue);
