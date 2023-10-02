@@ -192,7 +192,7 @@ button[type="button"]{
         &::after{
             content: '';
             position: absolute;
-            background-image: url('public/bg-intro-mobile.svg');
+            background-image: url('/public/bg-intro-mobile.svg');
             background-repeat: no-repeat;
             background-position:top;
             background-size: contain;
@@ -675,7 +675,7 @@ button[type="button"]{
             }
 
             &::after{
-                background-image: url('public/bg-intro-desktop.svg');
+                background-image: url('/public/bg-intro-desktop.svg');
                 background-position:right;
                 background-size: auto;
                 inset: -30rem -13rem 0 0;
