@@ -27,7 +27,10 @@ html:focus-within {
 }
 
 /* Set min height */
-html,body,#root{min-height: 100vh; overflow-x: hidden;}
+html,body,#root{min-height: 100vh;}
+
+//Hide unecessary overflowing
+html{overflow-x: hidden;}
 
 /* Set core body defaults */
 body {

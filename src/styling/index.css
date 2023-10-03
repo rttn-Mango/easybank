@@ -34,6 +34,10 @@ html, body, #root {
   min-height: 100vh;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* Set core body defaults */
 body {
   text-rendering: optimizeSpeed;
