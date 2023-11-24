@@ -34,7 +34,7 @@ export default function Careers(){
             <section className="careers__values | container">
                 <h2>Our Values</h2>
                 <div className="careers__values--group">
-                    <img src="/team.jpg" alt="Easybank Team" draggable="false" loading="lazy"/>
+                    <img src="/team.jpg" alt="Easybank Team" draggable="false"/>
                     <div className="careers__values--cards">
                         {
                             CAREERS_DATA.map(career => {

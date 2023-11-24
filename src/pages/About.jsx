@@ -29,7 +29,7 @@ export default function About(){
             <h1>Easybank, where banking is made simple.</h1>
             <div className="about__intro">
                 <div className="about__intro--wrapper | container">
-                    <img src="/placeholder.jpg" alt="placeholder" draggable="false" loading="lazy"/>
+                    <img src="/placeholder.jpg" alt="placeholder" draggable="false"/>
                     <h2>About <span>us</span></h2> 
                 </div>
                 <p className="container">At Easybank, we understand that your time is valuable. That&apos;s why we&apos;ve designed our platform to be intuitive and efficient, ensuring you have more time to focus on what matters most to you. With a range of cutting-edge digital tools and features, managing your money has never been easier.</p>
